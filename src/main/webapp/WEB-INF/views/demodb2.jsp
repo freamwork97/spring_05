@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h2>demodb1.jsp</h2>
+    <h2>demodb2.jsp</h2>
    <form action="/reqdb1" method="post">
         name: <input type="text" name="name"> <br>
         age: <input type="text" name="age"> <br>
