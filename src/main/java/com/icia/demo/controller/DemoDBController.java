@@ -37,9 +37,9 @@ public class DemoDBController {
     }
 
     @GetMapping("/find")
-    public String findByID(@RequestParam("id") Long id, Model model){
+    public String findByID(@RequestParam("id") Long id, Model model) {
         DemoDTO demoDTO = demoDBService.findByID(id);
-        model.addAttribute("demo",demoDTO);
+        model.addAttribute("demo", demoDTO);
         return "demodb3";
     }
 

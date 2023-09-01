@@ -1,13 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
+  <head>
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>req1.jsp</h2>
-    ${demo}<br>
-    ${demo.name}<br>
-    ${demo.age}<br>
-
-</body>
+    ${demo}<br />
+    ${demo.name}<br />
+    ${demo.age}<br />
+  </body>
 </html>

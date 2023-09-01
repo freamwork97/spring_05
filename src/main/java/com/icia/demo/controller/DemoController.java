@@ -31,8 +31,8 @@ public class DemoController {
 
     @GetMapping("/req1")
     public String req1(@RequestParam("name") String name,
-                       @RequestParam("age") int age,
-                       Model model) {
+            @RequestParam("age") int age,
+            Model model) {
         DemoDTO demoDTO = demoService.req1(name, age);
         model.addAttribute("demo", demoDTO);
         return "req1";
