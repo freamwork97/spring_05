@@ -1,15 +1,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
     <h2>demodb2.jsp</h2>
-   <form action="/reqdb1" method="post">
-        name: <input type="text" name="name"> <br>
-        age: <input type="text" name="age"> <br>
-        <input type="submit" value="전송">
-    </form>
-
+    <table>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>age</td>
+    </tr>
+    <c:forEach items="${demoList}" var="demo">
+    <tr>
+        <td>
+            <a href="/find?id=${demo.id}">${demo.id}</a>
+        </td>
+        <td>${demo.name}</td>
+        <td>${demo.age}</td>
+    </tr>
+    </c:forEach>
+    </table>
 </body>
 </html>

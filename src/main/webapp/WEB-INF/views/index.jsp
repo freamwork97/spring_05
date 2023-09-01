@@ -3,6 +3,7 @@
 <head>
     <title>Title</title>
 </head>
+
 <body>
     <h2>index.jsp</h2>
     <a href="/demo1">demo1.jsp로 이동</a>

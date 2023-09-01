@@ -11,6 +11,7 @@ import java.util.List;
 public class DemoDBService {
     @Autowired
     private DemoDBRepository demoDBRepository;
+
     public void reqdb1(DemoDTO demoDTO) {
         demoDBRepository.reqdb1(demoDTO);
     }
@@ -19,5 +20,9 @@ public class DemoDBService {
 //        List<DemoDTO> demoDTOList = demoDBRepository.findAll();
 //        return demoDTOList;
         return demoDBRepository.findAll();
+    }
+
+    public DemoDTO findByID(Long id) {
+        return demoDBRepository.findByID(id);
     }
 }

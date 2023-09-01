@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,12 +27,20 @@ public class DemoDBController {
         demoDBService.reqdb1(demoDTO);
         return "index";
     }
+
     @GetMapping("/demodb2")
-    public String demodb2(Model model){
+    public String demodb2(Model model) {
         List<DemoDTO> demoDTOList = demoDBService.findAll();
         System.out.println("demoList = " + demoDTOList);
-        model.addAttribute("demoList",demoDTOList);
+        model.addAttribute("demoList", demoDTOList);
         return "demodb2";
+    }
+
+    @GetMapping("/find")
+    public String findByID(@RequestParam("id") Long id, Model model){
+        DemoDTO demoDTO = demoDBService.findByID(id);
+        model.addAttribute("demo",demoDTO);
+        return "demodb3";
     }
 
 }

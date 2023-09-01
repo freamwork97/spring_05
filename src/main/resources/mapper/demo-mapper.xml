@@ -8,8 +8,11 @@
         insert into demo_table(name, age)
         value(#{name}, #{age})
     </insert>
-    <select id="findAll" resultType="com.icia.demo.dto.DemoDTO">
+    <select id="findAll" resultType="demo">
         select * from demo_table
+    </select>
+    <select id="findByID" parameterType="Long" resultType="demo">
+        select * from demo_table where id=(#{id})
     </select>
 </mapper>
 

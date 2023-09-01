@@ -9,13 +9,18 @@ import java.util.List;
 
 @Repository
 public class DemoDBRepository {
-@Autowired
-private SqlSessionTemplate sql;
+    @Autowired
+    private SqlSessionTemplate sql;
+
     public void reqdb1(DemoDTO demoDTO) {
-        sql.insert("Demo.save",demoDTO);
+        sql.insert("Demo.save", demoDTO);
     }
 
     public List<DemoDTO> findAll() {
         return sql.selectList("Demo.findAll");
+    }
+
+    public DemoDTO findByID(Long id) {
+        return sql.selectOne("Demo.findByID", id);
     }
 }
